@@ -1,0 +1,20 @@
+
+[2025-11-12 08:00:00.123] INFO  main.c:245 Starting application version=1.4.0
+[2025-11-12 08:00:00.456] DEBUG auth.c:67 authenticate user=alice result=success
+[2025-11-12 08:00:01.001] INFO  http.c:132 GET /api/items status=200 time_ms=12
+[2025-11-12 08:00:01.200] WARN  db.c:215 Query slow duration_ms=452 sql="SELECT * FROM items WHERE price > 100"
+[2025-11-12 08:00:02.300] ERROR payment.c:98 Payment processing failed order_id=8271 err="insufficient_funds"
+[2025-11-12 08:00:03.400] INFO  worker.c:56 Job scheduled job_id=9001 type=cleanup
+[2025-11-12 08:00:04.500] DEBUG cache.c:40 cache_miss key=user_42
+[2025-11-12 08:00:05.600] INFO  main.c:312 Graceful shutdown initiated by signal=SIGTERM
+[2025-11-12 08:00:06.700] INFO  main.c:330 Shutdown complete
+
+[2025-11-12 08:01:00.123] INFO  main.c:245 Starting application version=1.4.0
+[2025-11-12 08:01:00.456] DEBUG auth.c:67 authenticate user=bob result=failure
+[2025-11-12 08:01:01.001] INFO  http.c:132 POST /api/login status=302 time_ms=98
+[2025-11-12 08:01:01.200] WARN  db.c:215 Query slow duration_ms=512 sql="SELECT * FROM users WHERE active=1"
+[2025-11-12 08:01:02.300] ERROR payment.c:98 Payment processing failed order_id=8272 err="card_declined"
+[2025-11-12 08:01:03.400] INFO  worker.c:56 Job scheduled job_id=9002 type=email
+[2025-11-12 08:01:04.500] DEBUG cache.c:40 cache_hit key=session_99
+[2025-11-12 08:01:05.600] INFO  metrics.c:88 Report sent latency_ms=123
+[2025-11-12 08:01:06.700] INFO  main.c:330 Health check passed
