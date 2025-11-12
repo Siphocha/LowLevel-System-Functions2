@@ -13,6 +13,13 @@ gcc -o StraceSystemCall StraceSystemCall.c
 strace -f -o temp_file.txt ./StraceSystemCall
 
  *2. Buffer/Unbuffered:*
+
+ Performance Analysis:
+
+Unbuffered I/O: High system call count (1,000,000), slower execution.
+
+Buffered I/O: Low system call count (few thousand), faster execution.
+
 Compile:
 cd into "2" folder
 gcc -o buff-IO buff-IO.c
