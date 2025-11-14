@@ -45,6 +45,8 @@ gcc -Wall -Wextra -pthread -o MultiFile MultiFile.c
 ORRR
 
 ./MultiFile merged_output.txt 1
+Insight:
+Performance increases with more threads for contention for the output file mutex becomes the bottleneck as a result of this.
 
 (for 4 you can pick 1 or two as options to represent threads usage.)
 
